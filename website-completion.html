@@ -1,0 +1,1131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOK-GAF Initiatives | Climate Action & Youth Empowerment</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2E8B57;
+            --secondary-color: #1E5631;
+            --accent-color: #F9A825;
+            --light-bg: #F5F7F9;
+            --dark-bg: #1A2A36;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Custom Navbar */
+        .navbar {
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: var(--dark-bg) !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--accent-color);
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, 
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline-light {
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        section h2 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Card Styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        /* Program Feature Box */
+        .program-feature {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .program-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .program-feature .icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Stats Counter */
+        .stats-section {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .counter-box {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .counter-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .counter-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Testimonial Section */
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            padding: 80px 0;
+            color: white;
+        }
+        
+        /* News Section */
+        .news-card {
+            margin-bottom: 30px;
+        }
+        
+        .news-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-link {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Timeline Component */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .timeline-right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .timeline-right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Team Member Cards */
+        .team-member {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .team-member img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--light-bg);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover img {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .team-member h5 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .team-member p {
+            color: #666;
+        }
+        
+        .team-social a {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-color: var(--light-bg);
+            line-height: 32px;
+            border-radius: 50%;
+            margin: 0 5px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Animation helper classes */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .timeline-left::after, .timeline-right::after {
+                left: 19px;
+            }
+            
+            .timeline-right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GOK-<span>GAF</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Climate Resilience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#green-army">Green Army</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#impact">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1>Building a Sustainable Kenya</h1>
+                <p class="mx-auto">GOK-GAF Initiatives: Empowering Youth and Communities Through Climate Action and Sustainable Development</p>
+                <div class="mt-4">
+                    <a href="#programs" class="btn btn-primary me-3">Our Programs</a>
+                    <a href="#contact" class="btn btn-outline-light">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>About GOK-GAF</h2>
+                <p>The Government of Kenya-Green Army Foundation (GOK-GAF) is a collaborative initiative focused on addressing climate change challenges while creating opportunities for Kenyan youth through environmental conservation and sustainable development projects.</p>
+            </div>
+            
+            <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="/api/placeholder/600/400" alt="About GOK-GAF" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Our Mission</h3>
+                    <p>To create sustainable environmental solutions while empowering Kenya's youth through meaningful employment, skills development, and community engagement.</p>
+                    
+                    <h3>Our Vision</h3>
+                    <p>A green, resilient Kenya where young people lead environmental conservation efforts and build sustainable communities.</p>
+                    
+                    <div class="d-flex mt-4">
+                        <div class="me-4">
+                            <h4 class="text-primary fw-bold">15B+</h4>
+                            <p>Trees Planted</p>
+                        </div>
+                        <div class="me-4">
+                            <h4 class="text-primary fw-bold">50K+</h4>
+                            <p>Youth Employed</p>
+                        </div>
+                        <div>
+                            <h4 class="text-primary fw-bold">47</h4>
+                            <p>Counties Served</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Public & Government Services</h2>
+                <p>We are dedicated to fostering peace, security, mental health awareness, and ICT innovation across Kenya's communities.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/600/400" class="card-img-top" alt="Peace & Security">
+                        <div class="card-body">
+                            <h5 class="card-title">Peace & Security</h5>
+                            <p class="card-text">Creating safe environments for communities through innovative solutions, conflict resolution, and community engagement.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Community Policing</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Conflict Resolution</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Youth Anti-Violence Programs</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/600/400" class="card-img-top" alt="Mental Health">
+                        <div class="card-body">
+                            <h5 class="card-title">Mental Health Awareness</h5>
+                            <p class="card-text">Promoting mental health through community support, education, and accessible resources for all Kenyans.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Youth Counseling Services</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Community Workshops</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Mental Health Education</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+               
+
+<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/600/400" class="card-img-top" alt="ICT & Innovation">
+                        <div class="card-body">
+                            <h5 class="card-title">ICT & Innovation</h5>
+                            <p class="card-text">Leveraging technology to solve environmental challenges and create digital opportunities for Kenyan youth.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Digital Skills Training</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Green Tech Solutions</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Innovation Hubs</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Climate Resilience Programs Section -->
+    <section id="programs" class="bg-light">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Climate Resilience Programs</h2>
+                <p>Our comprehensive programs are designed to build resilience against climate change while creating sustainable livelihoods and environmental conservation.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-feature text-center">
+                        <div class="icon">
+                            <i class="bi bi-tree-fill"></i>
+                        </div>
+                        <h4>Afforestation</h4>
+                        <p>Restoring Kenya's forest cover through large-scale tree planting initiatives led by youth groups across all 47 counties.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-feature text-center">
+                        <div class="icon">
+                            <i class="bi bi-droplet-fill"></i>
+                        </div>
+                        <h4>Water Resource Management</h4>
+                        <p>Implementing sustainable water harvesting techniques and conservation practices to address water scarcity in arid regions.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-feature text-center">
+                        <div class="icon">
+                            <i class="bi bi-sun-fill"></i>
+                        </div>
+                        <h4>Renewable Energy</h4>
+                        <p>Promoting clean energy solutions including solar installations and energy-efficient cookstoves for communities.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="program-feature text-center">
+                        <div class="icon">
+                            <i class="bi bi-recycle"></i>
+                        </div>
+                        <h4>Waste Management</h4>
+                        <p>Creating circular economy initiatives for waste reduction, recycling, and upcycling to reduce environmental pollution.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="program-feature text-center">
+                        <div class="icon">
+                            <i class="bi bi-house-fill"></i>
+                        </div>
+                        <h4>Sustainable Agriculture</h4>
+                        <p>Training youth in climate-smart agricultural practices to enhance food security and resilience in farming communities.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="program-feature text-center">
+                        <div class="icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>Community Adaptation</h4>
+                        <p>Supporting vulnerable communities to adapt to changing climate conditions through capacity building and infrastructure development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Green Army Section -->
+    <section id="green-army">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Kenya's Green Army</h2>
+                <p>Our flagship youth employment initiative providing opportunities for young Kenyans to engage in environmental conservation while earning sustainable livelihoods.</p>
+            </div>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="/api/placeholder/600/400" alt="Green Army" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3>Youth-Led Climate Action</h3>
+                    <p>The Green Army mobilizes young people across Kenya to participate in climate action projects that provide income while building sustainable environmental solutions.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Employment opportunities for 50,000+ youth</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Comprehensive training in environmental management</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Skill development and entrepreneurship opportunities</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Gender-balanced participation and inclusion</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-3">Join the Green Army</a>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline mt-5" data-aos="fade-up">
+                <h3 class="text-center mb-5">Green Army Growth Timeline</h3>
+                
+                <div class="timeline-container timeline-left">
+                    <div class="timeline-content">
+                        <h4>2022</h4>
+                        <p>Initial pilot program launched in 5 counties with 5,000 youth</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-container timeline-right">
+                    <div class="timeline-content">
+                        <h4>2023</h4>
+                        <p>Expansion to 20 counties with 20,000 youth engaged</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-container timeline-left">
+                    <div class="timeline-content">
+                        <h4>2024</h4>
+                        <p>National rollout across all 47 counties with 50,000 youth</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-container timeline-right">
+                    <div class="timeline-content">
+                        <h4>2025</h4>
+                        <p>Integration with national climate policies and diversification of green jobs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics Section -->
+    <section id="impact" class="stats-section">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2 class="text-white">Our Impact</h2>
+                <p class="text-white">The tangible results of our collective efforts toward building a greener, more resilient Kenya.</p>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter-box">
+                        <div class="counter-value">15B+</div>
+                        <div class="counter-label">Trees Planted</div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-box">
+                        <div class="counter-value">50K+</div>
+                        <div class="counter-label">Youth Employed</div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="counter-box">
+                        <div class="counter-value">47</div>
+                        <div class="counter-label">Counties Reached</div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="counter-box">
+                        <div class="counter-value">500+</div>
+                        <div class="counter-label">Communities Impacted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-light">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Success Stories</h2>
+                <p>Hear from beneficiaries of our programs and the impact of GOK-GAF in their lives and communities.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Joining the Green Army transformed my life. I not only learned about environmental conservation but also gained skills that helped me start my own tree nursery business."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/api/placeholder/60/60" alt="John Doe" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="testimonial-author">James Wambua</h5>
+                                <p class="mb-0">Green Army Member, Machakos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The water harvesting techniques we learned have helped our community overcome drought conditions. Our farms are now producing enough food even during dry seasons."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/api/placeholder/60/60" alt="Jane Smith" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="testimonial-author">Sarah Kinyua</h5>
+                                <p class="mb-0">Community Leader, Laikipia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The solar installation training program provided me with technical skills and now I run a successful renewable energy business serving my community and creating jobs."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/api/placeholder/60/60" alt="Daniel Brown" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="testimonial-author">David Omondi</h5>
+                                <p class="mb-0">Solar Entrepreneur, Kisumu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Our Leadership</h2>
+                <p>Meet the dedicated team guiding GOK-GAF's mission to build a greener, more resilient Kenya.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <img src="/api/placeholder/180/180" alt="Team Member">
+                        <h5>Dr. Josephine Ndung'u</h5>
+                        <p>Executive Director</p>
+                        <div class="team-social">
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <img src="/api/placeholder/180/180" alt="Team Member">
+                        <h5>George Kiptoo</h5>
+                        <p>Operations Director</p>
+                        <div class="team-social">
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                        <img src="/api/placeholder/180/180" alt="Team Member">
+                        <h5>Fatuma Hassan</h5>
+                        <p>Community Engagement Lead</p>
+                        <div class="team-social">
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member">
+                        <img src="/api/placeholder/180/180" alt="Team Member">
+                        <h5>Michael Gitau</h5>
+                        <p>Climate Programs Director</p>
+                        <div class="team-social">
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container text-center" data-aos="fade-up">
+            <h2 class="mb-4">Join the Movement for a Sustainable Kenya</h2>
+            <p class="mb-4">Whether you're looking to join the Green Army, partner with us, or support our initiatives, there's a place for you in our climate action community.</p>
+            <div>
+                <a href="#" class="btn btn-light me-3">Become a Volunteer</a>
+                <a href="#" class="btn btn-outline-light">Support Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="bg-light">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Latest Updates</h2>
+                <p>Stay informed about our latest projects, achievements, and climate action initiatives.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card news-card">
+                        <img src="/api/placeholder/600/400" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <div class="news-date">April 1, 2025</div>
+                            <h5 class="card-title">Green Army Expands to Northern Kenya</h5>
+                            <p class="card-text">New initiative launches to address climate challenges in Kenya's arid northern regions.</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card news-card">
+                        <img src="/api/placeholder/600/400" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <div class="news-date">March 24, 2025</div>
+                            <h5 class="card-title">10 Billion Trees Milestone Reached</h5>
+                            <p class="card-text">Kenya celebrates a significant achievement in national reforestation efforts.</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card news-card">
+                        <img src="/api/placeholder/600/400" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <div class="news-date">March 15, 2025</div>
+                            <h5 class="card-title">New Partnership with International Climate Fund</h5>
+                            <p class="card-text">GOK-GAF secures funding to scale up climate resilience programs nationwide.</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="text-center section-intro" data-aos="fade-up">
+                <h2>Get in Touch</h2>
+                <p>Have questions about our programs or want to get involved? Reach out to us.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Contact Information</h4>
+                    <p>We're always happy to hear from interested individuals, organizations, and potential partners.</p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                        <div>
+                            <h5 class="mb-0">Address</h5>
+                            <p class="mb-0">Harambee Avenue, Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope-fill text-primary fs-4 me-3"></i>
+                        <div>
+                            <h5 class="mb-0">Email</h5>
+                            <p class="mb-0">info@gokgaf.go.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-telephone-fill text-primary fs-4 me-3"></i>
+                        <div>
+                            <h5 class="mb-0">Phone</h5>
+                            <p class="mb-0">+254 700 000 000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="footer-heading">GOK-GAF</h4>
+                    <p>Building a sustainable future for Kenya through climate action and youth empowerment.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#services" class="footer-link">Services</a></li>
+                        <li><a href="#programs" class="footer-link">Programs</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Programs</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Afforestation</a></li>
+                        <li><a href="#" class="footer-link">Water Management</a></li>
+                        <li><a href="#" class="footer-link">Renewable Energy</a></li>
+                        <li><a href="#" class="footer-link">Waste Management</a></li>
+                        <li><a href="#" class="footer-link">Sustainable Agriculture</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates on our projects and initiatives.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="button-addon2">
+                            <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center copyright">
+                    <p>&copy; 2025 GOK-GAF. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>
